@@ -2,9 +2,25 @@
   "expo": {
     "name": "fidelion-app-client",
     "slug": "fidelion-app-client",
+    "scheme": "fidelion-app-client",
+    "facebookScheme": "fb1509725166193222",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
+  },
+  "name": "fidelion-app-client",
+  "baseURL": "https://novo-backend.izi.fit/app",
+  "keyAsyncStorage": "@FIDELIONCLIENT",
+  "widthCropAvatar": 300,
+  "heightCropAvatar": 300,
+  "google": {
+    "clientId": "373484994574-ahpfq508senoontbsrvoi8vr171637md.apps.googleusercontent.com",
+    "redirectUri": "https://auth.expo.io/@fidelion2023/fidelioncliente2023",
+    "responseType": "token",
+    "scope": "profile email"
+  },
+  "facebook": {
+    "clientId": "1509725166193222"
   }
 }
