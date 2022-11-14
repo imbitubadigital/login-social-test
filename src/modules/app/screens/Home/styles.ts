@@ -10,5 +10,5 @@ export const Container = styled.View`
 `;
 
 export const Txt = styled.Text`
-  color: '#fff';
+  color: #ffffff;
 `;
