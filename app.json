@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "fidelion-app-client",
+    "slug": "fidelion-app-client",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
