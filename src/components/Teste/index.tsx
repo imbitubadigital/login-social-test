@@ -16,6 +16,8 @@ export function Teste() {
       <Close />
       <S.Divider />
       <Button title="Google" onPress={signInWithGoogle} />
+      <S.Divider />
+      <Button title="facebook" onPress={signInWithFacebook} />
     </S.Container>
   );
 }
