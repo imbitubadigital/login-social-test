@@ -125,7 +125,7 @@ export interface AuthContextData {
   //   ) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
   signInWithFacebook: () => Promise<void>;
-  // signInWithApple: () => Promise<void>;
+  signInWithApple: () => Promise<void>;
   // forgotPassword: (payload: ChangePasswordEmailProps) => Promise<boolean>;
   // checkChangeEmail: (email: string) => Promise<boolean>;
   // changeEmailConfirm: (paylod: CodeValidationProps) => Promise<boolean>;

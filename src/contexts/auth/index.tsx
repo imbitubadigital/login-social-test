@@ -90,7 +90,7 @@ const AuthProvider = ({children}: ChildrenData) => {
     }
 
     if (response?.type === 'success') {
-      console.log('faceeeeee', response);
+      console.log('faceeeeee', response.params.access_token);
       //  const {access_token} = response.params;
 
       //  loginFacebook(access_token);
@@ -204,42 +204,43 @@ const AuthProvider = ({children}: ChildrenData) => {
     }
   }, []);
 
-  //   const signInWithApple = useCallback(async () => {
-  //     try {
-  //       setLoadingApple(true);
-  //       const credential = await AppleAuthentication.signInAsync({
-  //         requestedScopes: [
-  //           AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
-  //           AppleAuthentication.AppleAuthenticationScope.EMAIL,
-  //         ],
-  //       });
+  const signInWithApple = useCallback(async () => {
+    try {
+      // setLoadingApple(true);
+      const credential = await AppleAuthentication.signInAsync({
+        requestedScopes: [
+          AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+          AppleAuthentication.AppleAuthenticationScope.EMAIL,
+        ],
+      });
 
-  //       console.log('credential apple', credential);
+      console.log('credential apple', credential);
 
-  //       //   const responseApple = await api.post('/sessions/apple', {
-  //       //     appleAccessToken: credential.identityToken,
-  //       //     name: `${credential.fullName!.familyName!} ${credential.fullName!
-  //       //       .givenName!}`,
-  //       //     device: deviceInfo,
-  //       //   });
+      //   const responseApple = await api.post('/sessions/apple', {
+      //     appleAccessToken: credential.identityToken,
+      //     name: `${credential.fullName!.familyName!} ${credential.fullName!
+      //       .givenName!}`,
+      //     device: deviceInfo,
+      //   });
 
-  //       //   await settingData(responseApple.data);
-  //       //   if (!responseApple.data.user.hasAcceptedTerms) {
-  //       //     addToast({
-  //       //       title: 'Estamos quase lá',
-  //       //       message:
-  //       //         'Agora so precisamos que leia e aceite os temos de uso e privacidade!',
-  //       //       type: 'success',
-  //       //     });
-  //       //   }
+      //   await settingData(responseApple.data);
+      //   if (!responseApple.data.user.hasAcceptedTerms) {
+      //     addToast({
+      //       title: 'Estamos quase lá',
+      //       message:
+      //         'Agora so precisamos que leia e aceite os temos de uso e privacidade!',
+      //       type: 'success',
+      //     });
+      //   }
 
-  //       setLoadingApple(false);
-  //     } catch (err) {
-  //       //  triggerError(err);
-  //     } finally {
-  //       setLoadingApple(false);
-  //     }
-  //   }, []);
+      //  setLoadingApple(false);
+    } catch (err) {
+      console.log('caiu no erro apple', err);
+      //  triggerError(err);
+    } finally {
+      //   setLoadingApple(false);
+    }
+  }, []);
 
   //   const signInWithEmailPassword = useCallback(
   //     async (credential: PropsSignInWithEmailPassword) => {
@@ -542,7 +543,7 @@ const AuthProvider = ({children}: ChildrenData) => {
         //   signInWithEmailPassword,
         signInWithGoogle,
         signInWithFacebook,
-        // signInWithApple,
+        signInWithApple,
         signOut,
         //  deleteAccount,
         //  createUser,
